@@ -59,11 +59,11 @@ void AnimatedSprite::Draw(Graphics & graphics, int x, int y)
 	}
 }
 
-void AnimatedSprite::SetupAnimations()
-{
-	this->AddAnimation(3, 0, 0, "RunLeft", 16, 16, Vector2(0, 0));
-	this->AddAnimation(3, 0, 16, "RunRight", 16, 16, Vector2(0, 0));
-}
+//void AnimatedSprite::SetupAnimations()
+//{
+//	this->AddAnimation(3, 0, 0, "RunLeft", 16, 16, Vector2(0, 0));
+//	this->AddAnimation(3, 0, 16, "RunRight", 16, 16, Vector2(0, 0));
+//}
 
 void AnimatedSprite::AddAnimation(int frames, int x, int y, std::string name, int width, int height, Vector2 offset)
 {
@@ -108,8 +108,4 @@ void AnimatedSprite::StopAnimation()
 void AnimatedSprite::SetVisible(bool visible)
 {
 	this->_visible = visible;
-}
-
-void AnimatedSprite::AnimationDone(std::string currentAnimation)
-{
 }

@@ -27,7 +27,7 @@ void Game::GameLoop()
 
 	this->_player = AnimatedSprite(graphics, ".//content//sprites//MyChar.png", 0, 0, 16, 16, 100, 100, 100);
 	this->_player.SetupAnimations();
-	this->_player.PlayAnimation("RunLeft");
+	this->_player.PlayAnimation("RunRight");
 
 	int LastUpdateTime = SDL_GetTicks();
 
