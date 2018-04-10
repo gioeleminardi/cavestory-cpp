@@ -25,7 +25,7 @@ void Game::GameLoop()
 	Input input;
 	SDL_Event event;
 
-	this->_player = Sprite(graphics, "C:\\code\\cavestory-cpp\\Cavestory\\content\\sprites\\MyChar.png", 0, 0, 16, 16, 100, 100);
+	this->_player = Sprite(graphics, ".//content//sprites//MyChar.png", 0, 0, 16, 16, 100, 100);
 
 	int LastUpdateTime = SDL_GetTicks();
 
@@ -52,13 +52,13 @@ void Game::GameLoop()
 			LOG(INFO) << "ESCAPE KEY. EXITING";
 			return;
 		}
-	}
 
-	const int CURRENT_TIME_MS = SDL_GetTicks();
-	int DeltaTime = CURRENT_TIME_MS - LastUpdateTime;
-	this->Update(std::min<int>(DeltaTime, MAX_FRAME_TIME));
-	LastUpdateTime = CURRENT_TIME_MS;
-	this->Draw(graphics);
+		const int CURRENT_TIME_MS = SDL_GetTicks();
+		int DeltaTime = CURRENT_TIME_MS - LastUpdateTime;
+		this->Update(std::min<int>(DeltaTime, MAX_FRAME_TIME));
+		LastUpdateTime = CURRENT_TIME_MS;
+		this->Draw(graphics);
+	}
 }
 
 void Game::Draw(Graphics & graphics)
