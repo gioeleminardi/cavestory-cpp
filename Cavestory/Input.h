@@ -2,6 +2,7 @@
 #include <map>
 #include <SDL.h>
 
+
 class Input
 {
 public:

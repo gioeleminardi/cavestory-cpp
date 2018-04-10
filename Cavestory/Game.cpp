@@ -2,14 +2,11 @@
 #include "Graphics.h"
 #include "Input.h"
 #include "easylogging++.h"
-
 #include <SDL.h>
-
-
 
 namespace {
 	constexpr int FPS = 50;
-	constexpr int MAX_FRAME_TIME = 5 * 1000 / FPS;
+	constexpr int MAX_FRAME_TIME = 1000 / FPS; //Each Frame must stay for a max of this time period (50fps = 20ms)
 }
 
 Game::Game()
