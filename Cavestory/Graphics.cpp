@@ -1,5 +1,6 @@
-#include "Graphics.h"
 #include <SDL.h>
+#include <SDL_image.h>
+#include "Graphics.h"
 
 Graphics::Graphics()
 {
@@ -10,4 +11,34 @@ Graphics::Graphics()
 Graphics::~Graphics()
 {
 	SDL_DestroyWindow(this->_window);
+}
+
+SDL_Surface * Graphics::LoadSurfaceImage(const std::string & filePath)
+{
+
+	if (this->_spriteSheets.count(filePath) == 0) {
+		this->_spriteSheets[filePath] = IMG_Load(filePath.c_str());
+	}
+
+	return this->_spriteSheets[filePath];
+}
+
+void Graphics::BlitSurface(SDL_Texture * texture, SDL_Rect * sourceRectangle, SDL_Rect * destinationRectangle)
+{
+	SDL_RenderCopy(this->_renderer, texture, sourceRectangle, destinationRectangle);
+}
+
+void Graphics::Flip()
+{
+	SDL_RenderPresent(this->_renderer);
+}
+
+void Graphics::Clear()
+{
+	SDL_RenderClear(this->_renderer);
+}
+
+SDL_Renderer * Graphics::GetRenderer() const
+{
+	return this->_renderer;
 }

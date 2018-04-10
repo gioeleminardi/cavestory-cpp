@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 Cavestory/SDL2.dll
+*.dll

@@ -2,14 +2,11 @@
 #include "Graphics.h"
 #include "Input.h"
 #include "easylogging++.h"
-
 #include <SDL.h>
-
-
 
 namespace {
 	constexpr int FPS = 50;
-	constexpr int MAX_FRAME_TIME = 5 * 1000 / FPS;
+	constexpr int MAX_FRAME_TIME = 1000 / FPS; //Each Frame must stay for a max of this time period (50fps = 20ms)
 }
 
 Game::Game()
@@ -27,6 +24,8 @@ void Game::GameLoop()
 	Graphics graphics;
 	Input input;
 	SDL_Event event;
+
+	this->_player = Sprite(graphics, "C:\\code\\cavestory-cpp\\Cavestory\\content\\sprites\\MyChar.png", 0, 0, 16, 16, 100, 100);
 
 	int LastUpdateTime = SDL_GetTicks();
 
@@ -59,10 +58,14 @@ void Game::GameLoop()
 	int DeltaTime = CURRENT_TIME_MS - LastUpdateTime;
 	this->Update(std::min<int>(DeltaTime, MAX_FRAME_TIME));
 	LastUpdateTime = CURRENT_TIME_MS;
+	this->Draw(graphics);
 }
 
 void Game::Draw(Graphics & graphics)
 {
+	graphics.Clear();
+	this->_player.Draw(graphics, 100, 100);
+	graphics.Flip();
 }
 
 void Game::Update(float DeltaTime)
