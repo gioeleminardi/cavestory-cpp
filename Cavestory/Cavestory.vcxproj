@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="easylogging++.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Sprite.h" />

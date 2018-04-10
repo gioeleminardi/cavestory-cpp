@@ -50,5 +50,8 @@
     <ClInclude Include="Sprite.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,12 +1,13 @@
 #include "Sprite.h"
 #include "Graphics.h"
+#include "Globals.h"
 #include "easylogging++.h"
 
 Sprite::Sprite()
 {
 }
 
-Sprite::Sprite(Graphics & graphics, const std::string & filePath, int sourceX, int sourceY, int width, int height, float posX, float posY) :
+Sprite::Sprite(Graphics & graphics, const std::string & filePath, int sourceX, int sourceY, int width, int height, int posX, int posY) :
 	_x(posX),
 	_y(posY)
 {
@@ -35,8 +36,8 @@ void Sprite::Draw(Graphics & graphics, int x, int y)
 	SDL_Rect destinationRectangle = {
 		x,
 		y,
-		this->_sourceRect.w,
-		this->_sourceRect.h
+		this->_sourceRect.w * Globals::SPRITE_SCALE,
+		this->_sourceRect.h * Globals::SPRITE_SCALE
 	};
 
 	graphics.BlitSurface(this->_spriteSheet, &this->_sourceRect, &destinationRectangle);
