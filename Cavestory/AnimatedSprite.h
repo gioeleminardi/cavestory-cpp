@@ -23,7 +23,7 @@ public:
 	void PlayAnimation(std::string animation, bool once = false);
 
 	// Updates the animated sprite (timer)
-	void Update(int elapsedTime);
+	void Update(float elapsedTime);
 
 	// Draws the sprite to the screen
 	void Draw(Graphics &graphics, int x, int y);

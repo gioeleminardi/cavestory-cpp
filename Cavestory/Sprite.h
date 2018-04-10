@@ -16,11 +16,11 @@ public:
 	virtual ~Sprite();
 	virtual void Update();
 	void Draw(Graphics &graphics, int x, int y);
+protected:
+	SDL_Rect _sourceRect;
+	SDL_Texture * _spriteSheet;
 
 private:
-	SDL_Rect _sourceRect;
-	SDL_Texture *_spriteSheet;
-
 	int _x, _y;
 };
 

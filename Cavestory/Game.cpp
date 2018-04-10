@@ -25,7 +25,9 @@ void Game::GameLoop()
 	Input input;
 	SDL_Event event;
 
-	this->_player = Sprite(graphics, ".//content//sprites//MyChar.png", 0, 0, 16, 16, 100, 100);
+	this->_player = AnimatedSprite(graphics, ".//content//sprites//MyChar.png", 0, 0, 16, 16, 100, 100, 100);
+	this->_player.SetupAnimations();
+	this->_player.PlayAnimation("RunLeft");
 
 	int LastUpdateTime = SDL_GetTicks();
 
@@ -70,4 +72,6 @@ void Game::Draw(Graphics & graphics)
 
 void Game::Update(float DeltaTime)
 {
+	//LOG(INFO) << "DeltaTime: " << DeltaTime;
+	this->_player.Update(DeltaTime);
 }
