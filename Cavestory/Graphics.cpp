@@ -13,7 +13,7 @@ Graphics::~Graphics()
 	SDL_DestroyWindow(this->_window);
 }
 
-SDL_Surface * Graphics::loadImage(const std::string & filePath)
+SDL_Surface * Graphics::LoadSurfaceImage(const std::string & filePath)
 {
 
 	if (this->_spriteSheets.count(filePath) == 0) {
@@ -23,22 +23,22 @@ SDL_Surface * Graphics::loadImage(const std::string & filePath)
 	return this->_spriteSheets[filePath];
 }
 
-void Graphics::blitSurface(SDL_Texture * texture, SDL_Rect * sourceRectangle, SDL_Rect * destinationRectangle)
+void Graphics::BlitSurface(SDL_Texture * texture, SDL_Rect * sourceRectangle, SDL_Rect * destinationRectangle)
 {
 	SDL_RenderCopy(this->_renderer, texture, sourceRectangle, destinationRectangle);
 }
 
-void Graphics::flip()
+void Graphics::Flip()
 {
 	SDL_RenderPresent(this->_renderer);
 }
 
-void Graphics::clear()
+void Graphics::Clear()
 {
 	SDL_RenderClear(this->_renderer);
 }
 
-SDL_Renderer * Graphics::getRenderer() const
+SDL_Renderer * Graphics::GetRenderer() const
 {
 	return this->_renderer;
 }

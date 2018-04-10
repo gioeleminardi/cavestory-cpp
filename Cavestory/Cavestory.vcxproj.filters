@@ -47,9 +47,6 @@
     <ClInclude Include="Input.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>

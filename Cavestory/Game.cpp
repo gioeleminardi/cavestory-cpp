@@ -25,6 +25,8 @@ void Game::GameLoop()
 	Input input;
 	SDL_Event event;
 
+	this->_player = Sprite(graphics, "C:\\code\\cavestory-cpp\\Cavestory\\content\\sprites\\MyChar.png", 0, 0, 16, 16, 100, 100);
+
 	int LastUpdateTime = SDL_GetTicks();
 
 	while (true) {
@@ -56,10 +58,14 @@ void Game::GameLoop()
 	int DeltaTime = CURRENT_TIME_MS - LastUpdateTime;
 	this->Update(std::min<int>(DeltaTime, MAX_FRAME_TIME));
 	LastUpdateTime = CURRENT_TIME_MS;
+	this->Draw(graphics);
 }
 
 void Game::Draw(Graphics & graphics)
 {
+	graphics.Clear();
+	this->_player.Draw(graphics, 100, 100);
+	graphics.Flip();
 }
 
 void Game::Update(float DeltaTime)

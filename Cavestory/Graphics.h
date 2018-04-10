@@ -21,24 +21,24 @@ public:
 	/* SDL_Surface* loadImage
 		Loads image from disk
 	*/
-	SDL_Surface* loadImage(const std::string &filePath);
+	SDL_Surface* LoadSurfaceImage(const std::string &filePath);
 
 	/* void blitSurface
 		Draw a texture to a certain part of the screen
 	*/
-	void blitSurface(SDL_Texture *texture, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle);
+	void BlitSurface(SDL_Texture *texture, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle);
 
 	/* void flip
 		Renders everything to the screen
 	*/
-	void flip();
+	void Flip();
 
 	/* void clear
 		Clears the screen
 	*/
-	void clear();
+	void Clear();
 
-	SDL_Renderer* getRenderer() const;
+	SDL_Renderer* GetRenderer() const;
 private:
 	SDL_Window * _window;
 	SDL_Renderer* _renderer;
