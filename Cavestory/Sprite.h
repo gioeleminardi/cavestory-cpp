@@ -12,13 +12,13 @@ class Sprite
 public:
 	Sprite();
 	Sprite(Graphics &graphics, const std::string &filePath, int sourceX, int sourceY, int width, int height,
-		int posX, int posY);
+		float posX, float posY);
 	virtual ~Sprite();
 	virtual void Update();
 	void Draw(Graphics &graphics, int x, int y);
 protected:
 	SDL_Rect _sourceRect;
 	SDL_Texture * _spriteSheet;
-	int _x, _y;
+	float _x, _y;
 };
 

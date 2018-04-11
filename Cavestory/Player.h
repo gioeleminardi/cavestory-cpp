@@ -8,7 +8,7 @@ class Player : public AnimatedSprite
 {
 public:
 	Player();
-	Player(Graphics &graphics, int x, int y);
+	Player(Graphics &graphics, float x, float y);
 	virtual ~Player();
 
 	void Draw(Graphics &graphics);

@@ -6,7 +6,7 @@ AnimatedSprite::AnimatedSprite()
 {
 }
 
-AnimatedSprite::AnimatedSprite(Graphics & graphics, const std::string & filePath, int sourceX, int sourceY, int width, int height, int posX, int posY, float timeToUpdate) :
+AnimatedSprite::AnimatedSprite(Graphics & graphics, const std::string & filePath, int sourceX, int sourceY, int width, int height, float posX, float posY, float timeToUpdate) :
 	Sprite(graphics, filePath, sourceX, sourceY, width, height, posX, posY),
 	_frameIndex(0),
 	_timeElapsed(0),
@@ -31,7 +31,7 @@ void AnimatedSprite::Update(float elapsedTime)
 	if (this->_timeElapsed > this->_timeToUpdate) {
 		//LOG(INFO) << "[AnimatedSprite::Update] _timeElapsed > _timeToUpdate";
 		this->_timeElapsed -= this->_timeToUpdate;
-		if (this->_frameIndex < this->_animations[this->_currentAnimation].size() - 1) {
+		if (this->_frameIndex < static_cast<int>(this->_animations[this->_currentAnimation].size()) - 1) {
 			this->_frameIndex++;
 		}
 		else {
@@ -44,13 +44,13 @@ void AnimatedSprite::Update(float elapsedTime)
 	}
 }
 
-void AnimatedSprite::Draw(Graphics & graphics, int x, int y)
+void AnimatedSprite::Draw(Graphics & graphics, float x, float y)
 {
 	if (this->_visible) {
 		//LOG(INFO) << "[AnimatedSprite::Draw][Animation is visible]"; 
 		SDL_Rect destinationRectangle;
-		destinationRectangle.x = x + this->_offsets[this->_currentAnimation].x;
-		destinationRectangle.y = y + this->_offsets[this->_currentAnimation].y;
+		destinationRectangle.x = static_cast<int>(x) + static_cast<int>(this->_offsets[this->_currentAnimation].x);
+		destinationRectangle.y = static_cast<int>(y) + static_cast<int>(this->_offsets[this->_currentAnimation].y);
 		destinationRectangle.w = this->_sourceRect.w * Globals::SPRITE_SCALE;
 		destinationRectangle.h = this->_sourceRect.h * Globals::SPRITE_SCALE;
 

@@ -16,7 +16,7 @@ class AnimatedSprite : public Sprite
 public:
 	AnimatedSprite();
 	AnimatedSprite(Graphics &graphics, const std::string &filePath, int sourceX, int sourceY, int width, int height,
-		int posX, int posY, float timeToUpdate);
+		float posX, float posY, float timeToUpdate);
 	virtual ~AnimatedSprite();
 
 	// Play animation if it's not already playing
@@ -26,7 +26,7 @@ public:
 	void Update(float elapsedTime);
 
 	// Draws the sprite to the screen
-	void Draw(Graphics &graphics, int x, int y);
+	void Draw(Graphics &graphics, float x, float y);
 
 protected:
 	double _timeToUpdate;

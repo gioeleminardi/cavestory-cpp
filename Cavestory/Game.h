@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player.h"
+#include "Level.h"
 
 class Graphics;
 
@@ -15,6 +16,6 @@ private:
 	void Update(float DeltaTime);
 
 	Player _player;
-	
+	Level _level;
 };
 
