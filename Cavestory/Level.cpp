@@ -38,10 +38,10 @@ void Level::Draw(Graphics & graphics)
 	{
 		for (int y = 0; y < this->_size.y / sourceRect.h; y++)
 		{
-			destRect.x = x * sourceRect.w;
-			destRect.y = y * sourceRect.h;
-			destRect.w = sourceRect.w;
-			destRect.h = sourceRect.h;
+			destRect.x = x * sourceRect.w * Globals::SPRITE_SCALE;
+			destRect.y = y * sourceRect.h * Globals::SPRITE_SCALE;
+			destRect.w = sourceRect.w * Globals::SPRITE_SCALE;
+			destRect.h = sourceRect.h * Globals::SPRITE_SCALE;
 			graphics.BlitSurface(this->_backgroundTexture, &sourceRect, &destRect);
 		}
 	}
