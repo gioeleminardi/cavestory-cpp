@@ -2,7 +2,9 @@
 * This class manage graphics
 *
 */
-#pragma once
+#ifndef GRAPHICS_H
+#define GRAPHICS_H
+
 #include <string>
 #include <map>
 
@@ -46,3 +48,4 @@ private:
 	std::map<std::string, SDL_Surface*> _spriteSheets;
 };
 
+#endif

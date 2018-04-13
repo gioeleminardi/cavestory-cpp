@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include "AnimatedSprite.h"
 #include "Globals.h"
 
@@ -26,3 +28,4 @@ private:
 	Direction _facing;
 };
 
+#endif

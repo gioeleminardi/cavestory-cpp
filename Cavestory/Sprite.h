@@ -1,4 +1,6 @@
-#pragma once
+#ifndef SPRITE_H
+#define SPRITE_H
+
 #include <string>
 #include <SDL.h>
 
@@ -22,3 +24,4 @@ protected:
 	float _x, _y;
 };
 
+#endif

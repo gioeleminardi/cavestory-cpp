@@ -1,6 +1,10 @@
 #include "Level.h"
 #include "Graphics.h"
 #include "SDL.h"
+#include <sstream>
+#include "tinyxml2.h"
+
+using namespace tinyxml2;
 
 Level::Level()
 {
@@ -50,8 +54,15 @@ void Level::Draw(Graphics & graphics)
 void Level::LoadMap(std::string mapName, Graphics & graphics)
 {
 	//TEMPORARY CODE TO LOAD THE BACKGROUND
-	this->_backgroundTexture = SDL_CreateTextureFromSurface(graphics.GetRenderer(),
-		graphics.LoadSurfaceImage(".//content//backgrounds//bkBlue.png"));
+//	this->_backgroundTexture = SDL_CreateTextureFromSurface(graphics.GetRenderer(),
+//		graphics.LoadSurfaceImage(".//content//backgrounds//bkBlue.png"));
+//
+//	this->_size = Vector2(Globals::SCREEN_WIDTH * 2, Globals::SCREEN_HEIGHT * 2);
 
-	this->_size = Vector2(Globals::SCREEN_WIDTH * 2, Globals::SCREEN_HEIGHT * 2);
+    std::stringstream mapFilePath;
+    mapFilePath << ".//content//maps//" << mapName << ".xml";
+
+    XMLDocument rootNode;
+    rootNode.LoadFile(mapFilePath.str().c_str());
+
 }

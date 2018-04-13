@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAME_H
+#define GAME_H
 
 #include "Player.h"
 #include "Level.h"
@@ -19,3 +20,4 @@ private:
 	Level _level;
 };
 
+#endif

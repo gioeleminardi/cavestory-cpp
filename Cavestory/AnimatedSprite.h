@@ -1,4 +1,6 @@
-#pragma once
+#ifndef ANIMATED_SPRITE_H
+#define ANIMATED_SPRITE_H
+
 #include "Sprite.h"
 #include "Globals.h"
 
@@ -55,3 +57,4 @@ private:
 	bool _visible;
 };
 
+#endif

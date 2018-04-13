@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LEVEL_H
+#define LEVEL_H
 
 #include "Globals.h"
 #include <string>
@@ -24,3 +25,5 @@ private:
 
 	void LoadMap(std::string mapName, Graphics &graphics);
 };
+
+#endif
