@@ -42,6 +42,12 @@
     <ClCompile Include="Level.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="easylogging++.h">
@@ -69,6 +75,12 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="Level.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
